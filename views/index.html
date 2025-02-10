@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <script src="./htmx.min.js"></script>
+    <title>Todo List</title>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <div class="add-task__container">
+        <form hx-post="/add" hx-target="#task-list" hx-swap="innerHTML">
+            <input type="text" name="task" placeholder="New task"/>
+            <button>Add</button>
+        </form>
+    </div>
+    <ul class="task-list__container" id="task-list" hx-get="/tasks" hx-trigger="load">
+
+    </ul>
+</body>
+</html>
