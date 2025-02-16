@@ -15,13 +15,11 @@ h1 {
 .add-task__container,
 .task-list__container {
     display: flex;
-    gap: 10px;
     justify-content: center;
-    max-width: 500px;
     margin: 0 auto;
-    padding-left: 30px;
-    padding-right: 30px;
     padding-bottom: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .task-list__container {
@@ -31,6 +29,7 @@ h1 {
 }
 
 .task-list__container li {
+    align-items: center;
     background-color: #fff;
     border-radius: 8px;
     display: flex;
@@ -40,6 +39,19 @@ h1 {
     padding: 30px;
     width: 75%;
 }
+
+.task-list__container li > * {
+    flex: 1 0 45%;
+}
+
+.task-actions {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 70%;
+}
+
 
 
 form {
