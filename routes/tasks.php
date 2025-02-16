@@ -23,6 +23,6 @@ $app->get('/tasks[/{id}]', function (Request $request, Response $response, $task
         return $response;
     }
 
-    $response->getBody()->write(renderView('partials/task_list.php', ['tasks' => $_SESSION['tasks']]));
+    $response->getBody()->write(renderView('partials/task-list.php', ['tasks' => $_SESSION['tasks']]));
     return $response;
 });

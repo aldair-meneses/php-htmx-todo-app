@@ -9,23 +9,16 @@ $app->post('/update/{id}', function (Request $request, Response $response, $args
     }
 
     $taskId = $args['id'];
-    $parsedBody = $request->getParsedBody();
-    $updatedText = trim($parsedBody['task'] ?? '');
-
-    if (empty($updatedText)) {
-        $response->getBody()->write("Task cannot be empty!");
-        return $response->withStatus(400);
-    }
+    $data = $request->getParsedBody();
+    $updatedTask = $data['task'] ?? '';
 
     foreach ($_SESSION['tasks'] as &$task) {
         if ($task['id'] === $taskId) {
-            $task['task'] = htmlspecialchars($updatedText);
+            $task['task'] = $updatedTask;
             break;
         }
     }
 
-    $updatedTask = array_values(array_filter($_SESSION['tasks'], fn($t) => $t['id'] === $taskId))[0] ?? null;
-
-    $response->getBody()->write(renderView('partials/item.php', ['task' => $updatedTask]));
+    $response->getBody()->write(renderView('partials/item.php', ['task' => ['id' => $taskId, 'task' => $updatedTask]]));
     return $response;
 });

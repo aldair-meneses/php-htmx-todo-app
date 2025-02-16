@@ -15,6 +15,6 @@ $app->post('/add', function (Request $request, Response $response) {
         $_SESSION['tasks'][] = ['id' => uniqid(), 'task' => htmlspecialchars($taskText)];
     }
 
-    $response->getBody()->write(renderView('partials/task_list.php', ['tasks' => $_SESSION['tasks']]));
+    $response->getBody()->write(renderView('partials/task-list.php', ['tasks' => $_SESSION['tasks']]));
     return $response;
 });

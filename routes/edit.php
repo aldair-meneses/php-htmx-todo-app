@@ -21,7 +21,7 @@ $app->get('/edit/{id}', function (Request $request, Response $response, $args) {
         return $response->withStatus(404);
     }
 
-    $response->getBody()->write(renderView('partials/edit_task.php', ['task' => $task]));
+    $response->getBody()->write(renderView('partials/edit-task.php', ['task' => $task]));
     return $response;
 });
 
