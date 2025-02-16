@@ -39,8 +39,13 @@ This is a simple todo list application built with PHP, Slim Framework, and HTMX.
 ├── routes
 │   ├── add.php
 │   ├── delete.php
-│   └── tasks.php
+│   ├── edit.php
+│   ├── tasks.php
+│   └── update.php
 └── views
     ├── index.html
     └── partials
+        ├── edit-task.php
+        ├── item.php
+        └── task-list.php
 ```
