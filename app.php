@@ -24,6 +24,8 @@ $app->addErrorMiddleware(true, true, true);
 include __DIR__ . '/routes/tasks.php';
 include __DIR__ . '/routes/add.php';
 include __DIR__ . '/routes/delete.php';
+include __DIR__ . '/routes/edit.php';
+include __DIR__ . '/routes/update.php';
 
 $app->get('/', function (Request $request, Response $response) {
     $response->getBody()->write(renderView('index.html', []));
